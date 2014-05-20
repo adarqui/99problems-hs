@@ -20,29 +20,29 @@ reverse_fold_2 l = foldr (\x y -> y ++ [x]) [] l
 
 
 test_reverse_rec = TestCase $ do
-	assertEqual "for (reverse_rec [1..5])" [5,4,3,2,1] (reverse_rec [1..5])
-	assertEqual "for (reverse_rec [1])" [1] (reverse_rec [1])
-	assertEqual "for (reverse_rec [])" 0 (length (reverse_rec []))
+ assertEqual "for (reverse_rec [1..5])" [5,4,3,2,1] (reverse_rec [1..5])
+ assertEqual "for (reverse_rec [1])" [1] (reverse_rec [1])
+ assertEqual "for (reverse_rec [])" 0 (length (reverse_rec []))
 
 test_reverse_nat = TestCase $ do
-	assertEqual "for (reverse_nat [1..5])" [5,4,3,2,1] (reverse_nat [1..5])
-	assertEqual "for (reverse_nat [1])" [1] (reverse_nat [1])
-	assertEqual "for (reverse_nat [])" 0 (length (reverse_nat []))
+ assertEqual "for (reverse_nat [1..5])" [5,4,3,2,1] (reverse_nat [1..5])
+ assertEqual "for (reverse_nat [1])" [1] (reverse_nat [1])
+ assertEqual "for (reverse_nat [])" 0 (length (reverse_nat []))
 
 test_reverse_fold = TestCase $ do
-	assertEqual "for (reverse_fold [1..5])" [5,4,3,2,1] (reverse_fold [1..5])
+ assertEqual "for (reverse_fold [1..5])" [5,4,3,2,1] (reverse_fold [1..5])
 
 test_reverse_fold_2 = TestCase $ do
-	assertEqual "for (reverse_fold_2 [1..5])" [5,4,3,2,1] (reverse_fold_2 [1..5])
+ assertEqual "for (reverse_fold_2 [1..5])" [5,4,3,2,1] (reverse_fold_2 [1..5])
 
 
 p05_test = do
-	runTestTT p05_tests
+ runTestTT p05_tests
 
 
 p05_tests = TestList [
-				TestLabel "test_reverse_rec" test_reverse_rec,
-				TestLabel "test_reverse_nat" test_reverse_nat,
-				TestLabel "test_reverse_fold" test_reverse_fold,
-				TestLabel "test_reverse_fold_2" test_reverse_fold_2
-			]
+ TestLabel "test_reverse_rec" test_reverse_rec,
+ TestLabel "test_reverse_nat" test_reverse_nat,
+ TestLabel "test_reverse_fold" test_reverse_fold,
+ TestLabel "test_reverse_fold_2" test_reverse_fold_2
+ ]

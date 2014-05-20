@@ -27,54 +27,33 @@ removeAt_fold lst n = decode (result) where
 
 removeAt_nat :: [a] -> Int -> (a,[a])
 removeAt_nat lst@(l:ls) n = merge where
-							spl = splitAt (n-1) lst
-							merge = (head (snd spl), fst spl ++ tail (snd spl))
+ spl = splitAt (n-1) lst
+ merge = (head (snd spl), fst spl ++ tail (snd spl))
 
 
 removeAt_nat_2 :: [a] -> Int -> (a, [a])
 removeAt_nat_2 lst n = (head sp2, sp1 ++ tail sp2)
-						where (sp1, sp2) = splitAt (n-1) lst
-{-
- 
- WRONG
-
- "abcd" 2
-
- "[]" 2
- "[a]" 2
- "[a,b]" 2
- "[a,b,c]" 2
- "[a,b,c,d]" 2
-
- "[]" 0
- "[a]" 1
- "b [a] 1"
- "c [a] 1"
- "d [a] 1"
--}
+ where (sp1, sp2) = splitAt (n-1) lst
 
 -- Tests
 
 test_removeAt_fold = TestCase $ do
-	assertEqual "for (removeAt_fold 'abcd' 2)" (Just 'b', "acd") (removeAt_fold "abcd" 2)
+ assertEqual "for (removeAt_fold 'abcd' 2)" (Just 'b', "acd") (removeAt_fold "abcd" 2)
 
 test_removeAt_rec = TestCase $ do
-	assertEqual "for (removeAt_rec 'abcd' 2)" (Just 'b', "acd") (removeAt_rec "abcd" 2)
+ assertEqual "for (removeAt_rec 'abcd' 2)" (Just 'b', "acd") (removeAt_rec "abcd" 2)
 
 test_removeAt_nat = TestCase $ do
-	assertEqual "for (removeAt_nat 'abcd' 2)" ('b', "acd") (removeAt_nat "abcd" 2)
-
+ assertEqual "for (removeAt_nat 'abcd' 2)" ('b', "acd") (removeAt_nat "abcd" 2)
 
 test_removeAt_nat_2 = TestCase $ do
-	assertEqual "for (removeAt_nat_2 'abcd' 2)" ('b', "acd") (removeAt_nat_2 "abcd" 2)
-
+ assertEqual "for (removeAt_nat_2 'abcd' 2)" ('b', "acd") (removeAt_nat_2 "abcd" 2)
 
 p20_test = do
-	runTestTT p20_tests
+ runTestTT p20_tests
 
 p20_tests = TestList [
-				TestLabel "test_removeAt_fold" test_removeAt_fold,
-				TestLabel "test_removeAt_nat" test_removeAt_nat,
-				TestLabel "test_removeAt_nat_2" test_removeAt_nat_2
-			{-	TestLabel "test_removeAt_rec" test_removeAt_rec -}
-			]
+ TestLabel "test_removeAt_fold" test_removeAt_fold,
+ TestLabel "test_removeAt_nat" test_removeAt_nat,
+ TestLabel "test_removeAt_nat_2" test_removeAt_nat_2
+ ]

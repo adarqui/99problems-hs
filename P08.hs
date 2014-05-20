@@ -1,9 +1,7 @@
 module P08 (p08_test) where
 
 import Test.HUnit
-import Test.QuickCheck
 import Data.List
-
 
 compress_rec :: (Eq a) => [a] -> [a]
 compress_rec [] = []
@@ -17,38 +15,23 @@ compress_rec_2 :: (Eq a) => [a] -> [a]
 compress_rec_2 [] = []
 compress_rec_2 (a:as) = [a] ++ (dropWhile (== a) (compress_rec_2 as))
 
-{-
-main :: IO ()
-main = do
-	print $ compress "aaaaabccddddeefg"
-	-- print $ compress "aaaaabccddddeefg" -> abcdefg
-	print $ compress "zzggjjllmmnnaa"
-	print $ compress' "zzkggggolllmofsssppp"
-	print "hi"
-
--}
 
 -- Tests
 
-
 test_compress_rec = TestCase $ do
-	assertEqual "for (compress_rec 'aaaaabccddddeefga')" "abcdefga" (compress_rec "aaaaabccddddeefga")
-
+ assertEqual "for (compress_rec 'aaaaabccddddeefga')" "abcdefga" (compress_rec "aaaaabccddddeefga")
 
 test_compress_nat = TestCase $ do
-	assertEqual "for (compress_nat 'aaaaabccddddeefga')" "abcdefga" (compress_nat "aaaaabccddddeefga")
-
+ assertEqual "for (compress_nat 'aaaaabccddddeefga')" "abcdefga" (compress_nat "aaaaabccddddeefga")
 
 test_compress_rec_2 = TestCase $ do
-	assertEqual "for (compress_rec_2 'aaaaabccddddeefga')" "abcdefga" (compress_rec_2 "aaaaabccddddeefga")
-
+ assertEqual "for (compress_rec_2 'aaaaabccddddeefga')" "abcdefga" (compress_rec_2 "aaaaabccddddeefga")
 
 p08_test = do
-	runTestTT p08_tests
-
+ runTestTT p08_tests
 
 p08_tests = TestList [
-				TestLabel "test_compress_rec" test_compress_rec,
-				TestLabel "test_compress_nat" test_compress_nat,
-				TestLabel "test_compress_rec_2" test_compress_rec_2
-			]
+ TestLabel "test_compress_rec" test_compress_rec,
+ TestLabel "test_compress_nat" test_compress_nat,
+ TestLabel "test_compress_rec_2" test_compress_rec_2
+ ]
