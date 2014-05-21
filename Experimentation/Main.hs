@@ -2,7 +2,8 @@ module Main (
  b_nextToLast,
  b_nextToLast',
  b_nextToLast'',
- b_nextToLast'''
+ b_nextToLast''',
+ b_nextToLast''''
 ) where
 
 import Experimentation.P01
@@ -31,6 +32,7 @@ b_nextToLast = nextToLast_nat_3
 b_nextToLast' = nextToLast_foldl
 b_nextToLast'' = nextToLast_foldl'
 b_nextToLast''' = nextToLast_rec
+b_nextToLast'''' = nextToLast_rec_2
 
 main :: IO ()
 main = do

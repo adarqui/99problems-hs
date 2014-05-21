@@ -3,7 +3,8 @@ module Experimentation.P02 (
  nextToLast_nat_3,
  nextToLast_foldl,
  nextToLast_foldl',
- nextToLast_rec
+ nextToLast_rec,
+ nextToLast_rec_2
  ) where
 
 import Data.Maybe
@@ -30,6 +31,13 @@ nextToLast_nat_3 all = last $ init all
 nextToLast_rec :: [a] -> a
 nextToLast_rec (x:y:[]) = x
 nextToLast_rec (x:xs) = nextToLast_rec xs
+
+
+nextToLast_rec_2 :: [a] -> a
+nextToLast_rec_2 l = subex l
+ where
+  subex (y:yy:[]) = y
+  subex (y:ys) = subex ys
 
 
 nextToLast_foldl :: [a] -> a
