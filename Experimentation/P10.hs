@@ -1,4 +1,4 @@
-module P10 (p10_test, rle_rec) where
+module Experimentation.P10 (p10_test, rle_rec) where
 
 import Test.HUnit
 import Data.List

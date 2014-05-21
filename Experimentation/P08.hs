@@ -1,4 +1,4 @@
-module P08 (p08_test) where
+module Experimentation.P08 (p08_test) where
 
 import Test.HUnit
 import Data.List

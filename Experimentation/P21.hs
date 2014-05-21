@@ -1,4 +1,4 @@
-module P21 (p21_test) where
+module Experimentation.P21 (p21_test) where
 
 import Test.HUnit
 import Data.List

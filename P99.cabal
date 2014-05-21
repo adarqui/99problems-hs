@@ -11,9 +11,13 @@ build-type:          Simple
 cabal-version:       >=1.8
 
 library
-  exposed-module:      P01, P02
+  exposed-modules:     P99
   build-depends:       base ==4.7.*, HUnit ==1.2.5.*
+--  GHC-Options:         -O3 -Wall
+  GHC-Options:         -O3
 
 executable "99tests"
-  main-is:             main.hs
+  main-is:             Experimentation/Main.hs
   build-depends:       base ==4.7.*, HUnit ==1.2.5.*
+--  GHC-Options:         -O3 -Wall
+  GHC-Options:         -O3

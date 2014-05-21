@@ -1,4 +1,10 @@
-module P02 (p02_test) where
+module Experimentation.P02 (
+ p02_test,
+ nextToLast_nat_3,
+ nextToLast_foldl,
+ nextToLast_foldl',
+ nextToLast_rec
+ ) where
 
 import Data.Maybe
 import Test.HUnit
@@ -20,6 +26,18 @@ nextToLast_nat_2 all = Just $ head $ tail $ reverse all
 nextToLast_nat_3 :: [a] -> a
 nextToLast_nat_3 all = last $ init all
 
+
+nextToLast_rec :: [a] -> a
+nextToLast_rec (x:y:[]) = x
+nextToLast_rec (x:xs) = nextToLast_rec xs
+
+
+nextToLast_foldl :: [a] -> a
+nextToLast_foldl (x:y:z) = fst $ foldl (\x y -> (snd x, y)) (x,y) z
+
+
+nextToLast_foldl' :: [a] -> a
+nextToLast_foldl' (x:y:z) = fst $ foldl' (\x y -> (snd x, y)) (x,y) z
 
 -- Tests
 

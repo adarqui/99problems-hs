@@ -1,4 +1,4 @@
-module P03 (p03_test) where
+module Experimentation.P03 (p03_test) where
 
 import Test.HUnit
 import Data.Maybe

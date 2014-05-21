@@ -1,7 +1,7 @@
-module P11 (p11_test, rleM_rec_4, Rle(..)) where
+module Experimentation.P11 (p11_test, rleM_rec_4, Rle(..)) where
 
 import Test.HUnit
-import P10
+import Experimentation.P10
 
 data Rle a = Multiple Int a | Single a deriving (Show,Eq)
 

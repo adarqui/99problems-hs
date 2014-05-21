@@ -1,7 +1,7 @@
-module P12 (p12_test) where
+module Experimentation.P12 (p12_test) where
 
 import Test.HUnit
-import P11
+import Experimentation.P11
 
 decode_rleM_rec :: [Rle a] -> [a]
 decode_rleM_rec [] = []
